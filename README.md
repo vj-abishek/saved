@@ -31,3 +31,5 @@ Simply remove the extension from chrome and the option will be gone.
 <br>
 The saved list can be accessed again after re-installing the extension.
 
+# Copyright
+Lisenced under the [MIT LICENSE](License.txt)
