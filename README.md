@@ -16,20 +16,5 @@ A simple chrome extension written in Javascript which adds a **Save** option at 
 
 <br>
 
-**The saved sites will be shows as:**
-<img src="https://user-images.githubusercontent.com/40291960/136695137-96d2cc50-ebbb-4268-ae7e-93c9b8134b62.png" align="centre"
-alt="example" height=200 >
-
-# Note: No option to unsave a site from list as of now
-
-# F.A.Q
-1. How to remove this option?
-<br>
-Simply remove the extension from chrome and the option will be gone.
-<br>
-2. Will my saved list be deleted if I remove the extension?
-<br>
-The saved list can be accessed again after re-installing the extension.
-
 # Copyright
-Lisenced under the [MIT LICENSE](License.txt)
+Lisenced under the [MIT LICENSE](LICENSE)
