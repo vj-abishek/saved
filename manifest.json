@@ -1,0 +1,20 @@
+{
+    "name": "Getting Started Example",
+    "description": "Build an Extension!",
+    "version": "1.0",
+    "manifest_version": 3,
+    "web_accessible_resources": [
+        {
+            "resources": ["public/App.js", "public/lib/dexie.js"],
+            "matches": [ "https://github.com/*"]
+        }
+    ],
+    "content_scripts": [
+        {
+          "matches": ["https://github.com/*"],
+          "js": ["public/index.js"],
+          "run_at": "document_idle",
+          "css": ["public/style.css"]
+        }
+    ]
+}

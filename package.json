@@ -1,0 +1,7 @@
+{
+  "name": "save",
+  "version": "1.0.0",
+  "main": "public/index.js",
+  "author": "Abishek P.Y",
+  "license": "MIT"
+}

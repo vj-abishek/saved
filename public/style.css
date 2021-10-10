@@ -1,0 +1,11 @@
+.save_button {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.save_button svg {
+    color: var(--color-btn-primary-hover-bg);
+    margin-right: 5px;
+}
