@@ -4,7 +4,7 @@
 
 # Chrome extension which adds save button to github
 
-A simple chrome extension written in Javascript which adds a **Save** option at top right corner which saves projects at https://github.com/?save=1
+A simple chrome extension written in Javascript which adds a **Save** option at top right corner. The saved repos can be seen at https://github.com/?save=1
 
 # Usage
 #### Steps to load this extension: 
