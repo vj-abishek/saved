@@ -9,3 +9,11 @@
     color: var(--color-btn-primary-hover-bg);
     margin-right: 5px;
 }
+
+.saved-main {
+    padding: 15px;
+}
+
+.your-saved-txt {
+    text-decoration: underline;
+}
