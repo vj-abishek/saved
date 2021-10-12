@@ -90,44 +90,47 @@ window.onload = async () => {
     if (isSave) {
         const main = document.querySelector('main');
         main.classList.add("saved-main");
-        main.innerHTML = `
-          <h1 class="sr-only"> Saved</h1>
-          <h2 class="your-saved-txt">Your saved</h2>
-         `
 
-        const content = await db.repo.reverse().toArray();
+        // get saved data from indexeddb
+        const savedArray = await db.repo.reverse().toArray();
 
-        if (content.length >= 1) {
-            content.forEach((con) => {
-                const date = new Date(con.createdAt)
-                main.innerHTML += `
-                <div class="news">
-                    <ul>
+        let yourSavePageContent = `
+            <h1 class="sr-only"> Saved</h1>
+            <h2 class="f4 text-normal pt-md-3">Your saved</h2>
+            <ul>
+        `
+        if (savedArray.length >= 1) {
+            savedArray.forEach((savedData) => {
+                const date = new Date(savedData.createdAt)
+                yourSavePageContent += `
                         <li class="col-12 d-flex width-full py-4 border-bottom color-border-secondary public fork">
                             <h3 class="wb-break-all">
-                                <a href="${con.repo}">${con.repo.split('/')[1]}</a>
+                                <a href="${savedData.repo}">${savedData.repo.split('/')[1]}</a>
                                 <div class="color-text-secondary" style="font-size: 14px">SavedAt: ${date.toLocaleDateString('en-US', {
-                    month: 'long',
-                    day: '2-digit',
-                    year: 'numeric',
-                    hour: '2-digit'
-                })}</div>
+                                    month: 'long',
+                                    day: '2-digit',
+                                    year: 'numeric',
+                                    hour: '2-digit'
+                                })}</div>
                             </h3>
                         </li>
-                    </ul>
-                </div>
             `
             })
-        } else {
-            main.innerHTML = `
-            <h1 class="sr-only"> Saved</h1>
-            <div class="news">
-                <h2 class="your-saved-txt">Your saved</h2>
-
-                <h1 class="text-center">Nothing to show</h1>
-            </div>
-            `
+            yourSavePageContent += `
+                </ul>
+            `;
+            main.innerHTML = yourSavePageContent
+            return;
         }
+
+        main.innerHTML = `
+        <h1 class="sr-only"> Saved</h1>
+        <div class="news">
+            <h2 class="f4 text-normal pt-md-3">Your saved</h2>
+
+            <h1 class="text-center">Nothing to show</h1>
+        </div>
+        `
 
     }
 }
