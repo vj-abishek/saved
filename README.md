@@ -2,7 +2,7 @@
 <img src="https://user-images.githubusercontent.com/43115551/136692532-c4b77b59-e7de-461d-89b3-a45a36a02203.png" align="right"
      alt="Saved" >
 
-# saved
+# Saved
 
 A simple chrome extension written in Javascript which adds a **Save** option at top right corner. The saved repos can be seen at https://github.com/?save=1
 
