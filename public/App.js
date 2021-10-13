@@ -97,13 +97,13 @@ window.onload = async () => {
         let yourSavePageContent = `
             <h1 class="sr-only"> Saved</h1>
             <h2 class="f4 text-normal pt-md-3">Your saved</h2>
-            <ul>
+            <ul class="d-flex flex-wrap">
         `
         if (savedArray.length >= 1) {
             savedArray.forEach((savedData) => {
                 const date = new Date(savedData.createdAt)
                 yourSavePageContent += `
-                        <li class="col-12 d-flex width-full py-4 border-bottom color-border-secondary public fork">
+                        <li class="col-auto d-flex flex-content-stretch py-4 px-2 m-2 border color-border-secondary public fork" style="width: 45%; border-radius: 10px;">
                             <h3 class="wb-break-all">
                                 <a href="${savedData.repo}">${savedData.repo.split('/')[1]}</a>
                                 <div class="color-text-secondary" style="font-size: 14px">SavedAt: ${date.toLocaleDateString('en-US', {
