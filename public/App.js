@@ -103,7 +103,7 @@ window.onload = async () => {
             savedArray.forEach((savedData) => {
                 const date = new Date(savedData.createdAt)
                 yourSavePageContent += `
-                        <li class="col-auto d-flex flex-content-stretch py-4 px-2 m-2 border-bottom border-right color-border-secondary public fork" style="width: 45%;">
+                        <li class="col-auto d-flex flex-content-stretch py-4 px-2 m-2 border color-border-secondary public fork" style="width: 45%; border-radius: 10px;">
                             <h3 class="wb-break-all">
                                 <a href="${savedData.repo}">${savedData.repo.split('/')[1]}</a>
                                 <div class="color-text-secondary" style="font-size: 14px">SavedAt: ${date.toLocaleDateString('en-US', {
