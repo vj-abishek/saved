@@ -10,10 +10,25 @@
     margin-right: 5px;
 }
 
-.saved-main {
-    padding: 15px;
-}
-
 .your-saved-txt {
     text-decoration: underline;
 }
+
+.d-grid-your-saved {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+}
+
+.d-grid-your-saved li {
+    list-style: none;
+}
+
+.d-grid-your-saved .repo {
+    font-size: 14px;
+}
+
+.your-saved-page-content {
+    border-radius: 10px;
+}
+

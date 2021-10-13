@@ -96,16 +96,19 @@ window.onload = async () => {
 
         let yourSavePageContent = `
             <h1 class="sr-only"> Saved</h1>
-            <h2 class="f4 text-normal pt-md-3">Your saved</h2>
-            <ul class="d-flex flex-wrap">
+            <h2 class="f4 text-normal pt-md-3 mb-2">Your saved</h2>
+            <ul class="d-grid-your-saved">
         `
         if (savedArray.length >= 1) {
             savedArray.forEach((savedData) => {
                 const date = new Date(savedData.createdAt)
                 yourSavePageContent += `
-                        <li class="col-auto d-flex flex-content-stretch py-4 px-2 m-2 border color-border-secondary public fork" style="width: 45%; border-radius: 10px;">
+                        <li class="col-auto p-3 border color-border-secondary your-saved-page-content">
                             <h3 class="wb-break-all">
-                                <a href="${savedData.repo}">${savedData.repo.split('/')[1]}</a>
+                                <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" class="octicon octicon-repo color-text-secondary flex-shrink-0">
+                                    <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path>
+                                </svg>
+                                <a class="repo" href="${savedData.repo}">${savedData.repo.split('/')[1]}</a>
                                 <div class="color-text-secondary" style="font-size: 14px">SavedAt: ${date.toLocaleDateString('en-US', {
                                     month: 'long',
                                     day: '2-digit',
@@ -128,7 +131,7 @@ window.onload = async () => {
         <div class="news">
             <h2 class="f4 text-normal pt-md-3">Your saved</h2>
 
-            <h1 class="text-center">Nothing to show</h1>
+            <h2 class="text-center mt-2">Nothing to show</h2>
         </div>
         `
 
