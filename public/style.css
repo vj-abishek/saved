@@ -17,3 +17,8 @@
 .your-saved-txt {
     text-decoration: underline;
 }
+
+.row-wise {
+    display: flex !important;
+    flex-direction: column;
+}
