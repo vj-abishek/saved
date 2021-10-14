@@ -1,5 +1,5 @@
 {
-    "name": "saved",
+    "name": "Saved",
     "description": "A simple chrome extension written in Javascript which adds a Save option at top right corner. The saved repos can be seen at https://github.com/?save=1",
     "version": "1.0",
     "manifest_version": 2,
