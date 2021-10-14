@@ -9,6 +9,8 @@
 
 A simple chrome extension written in Javascript which adds a **Save** option at top right corner. The saved repos can be seen at https://github.com/?save=1
 
+You can also see `Your saved` link in the top nav bar
+
 # Usage
 #### Steps to load this extension:
 1. Download and extract [zip](https://github.com/vj-abishek/saved/archive/main.zip).
