@@ -4,6 +4,7 @@ async function checkIfAlreadySaved(usor, repo, db) {
 }
 
 function toggleSaveBtn(btnEl = null, state = 0, immediate = false) {
+
     if (state) {  //Saved
         const template = `
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
@@ -13,15 +14,15 @@ function toggleSaveBtn(btnEl = null, state = 0, immediate = false) {
     `
         return immediate ? template : btnEl.innerHTML = template
     }
-    else { //Save
-        const template =  `
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
-        </svg>
-        Save
-        `
-        return immediate? template : btnEl.innerHTML = template
-    }
+
+    //Save
+    const template =  `
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+    </svg>
+    Save
+    `
+    return immediate? template : btnEl.innerHTML = template
 }
 
 let db = null;
@@ -42,8 +43,9 @@ const savedOnUI = (date) => `
 
 const handleSaveBtnClick = async ({ target }) => {
     if(target.dataset.savedpathname && db) {
-        const save_me_button = document.querySelector(`.saved_button[data-savedpathname="${target.dataset.savedpathname}"]`)
-        const [usor, repo] = target.dataset.savedpathname.split('/')
+        const { savedpathname } = target.dataset
+        const save_me_button = document.querySelector(`.saved_button[data-savedpathname="${savedpathname}"]`)
+        const [usor, repo] = savedpathname.split('/')
         if (await checkIfAlreadySaved(usor, repo, db)) {
             try {
                 await db.repo.where('repo').equals(`${usor}/${repo}`).delete();
@@ -62,7 +64,7 @@ const handleSaveBtnClick = async ({ target }) => {
     }
 }
 
-window.onload = async () => {
+const main = async () => {
 
     db = new Dexie('save_database');
     db.version(1).stores({
@@ -159,4 +161,5 @@ window.onload = async () => {
     }
 }
 
+window.addEventListener('load', main)
 window.addEventListener('click', handleSaveBtnClick)
