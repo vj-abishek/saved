@@ -1,13 +1,18 @@
-.save_button {
+.saved_button {
     display: flex !important;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
 }
 
-.save_button svg {
+main {
+    margin-bottom: 35%;
+}
+
+.saved_button svg {
     color: var(--color-btn-primary-hover-bg);
     margin-right: 5px;
+    pointer-events: none;
 }
 
 .your-saved-txt {
@@ -16,7 +21,8 @@
 
 .d-grid-your-saved {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1em;
 }
 
@@ -32,3 +38,6 @@
     border-radius: 10px;
 }
 
+.inside-flex {
+    justify-content: space-between;
+}
