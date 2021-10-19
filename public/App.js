@@ -65,10 +65,11 @@ const handleSaveBtnClick = async ({ target }) => {
 }
 
 const main = async () => {
-
+    document.title = "Your saved"
     db = new Dexie('save_database');
     db.version(1).stores({
         repo: '++id, repo',
+        
     });
 
     // your Saved link
